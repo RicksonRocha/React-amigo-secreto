@@ -1,8 +1,7 @@
-//src/componentes/Card/index.tsx
 
 import React from "react"
 
-import './estilos.css'
+import './Card.css'
 
 const Card: React.FC = ({ children }) => {
     return (

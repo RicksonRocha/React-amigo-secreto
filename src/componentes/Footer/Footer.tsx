@@ -1,20 +1,22 @@
-import React from 'react'
-import { useListaDeParticipantes } from '../../state/hook/useListaDeParticipante'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom"
+import { useListaDeParticipantes } from "../../state/hook/useListaDeParticipante"
 
-const Footer = () => {
+import './Rodape.css'
+
+const Rodape = () => {
+
     const participantes = useListaDeParticipantes()
-    const navigate = useNavigate()
+
+    const navegarPara = useNavigate()
 
     const iniciar = () => {
-        navigate('/sorteio')
+        navegarPara('/sorteio')
     }
 
-    return (
-        <footer>
-            <button onClick={iniciar} disabled={participantes.length < 3}>Iniciar brincadeira</button>
-        </footer>
-    )
+    return (<footer className="rodape-configuracoes">
+        <button className="botao" disabled={participantes.length < 3} onClick={iniciar}>Iniciar brincadeira</button>
+        <img src="/imagens/sacolas.png" alt="Sacolas de compras" />
+    </footer>)
 }
 
-export default Footer
+export default Rodape
