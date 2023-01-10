@@ -26,7 +26,13 @@ exports[`A pagina de configuracao deve ser renderizada corretamente 1`] = `
         </div>
         
       </form>
-      <ul />
+      <ul>
+        <p
+          role="alert"
+        >
+          Mínimo de 3 participantes para iniciar
+        </p>
+      </ul>
       <footer
         class="rodape-configuracoes"
       >
