@@ -1,4 +1,4 @@
-<h1>React Testing Library</h1>
+<h1>React Amigo Secreto</h1>
 <h2>O que é esse projeto?</h2>
 <p>Projeto desenvolvido durante o curso da alura <b>React: Testando seus componentes</b>. O objetivo foi realizar testes no Front-end com Jest e React Testing library com testes unitários e TDD (interface e desenvolviemento orientados ao teste)</p>
 
