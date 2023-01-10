@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
-import Configuracao from './pages/Configuracao';
+import Configuracao from './pages/Configuracao/Configuracao';
 
 function App() {
   return (
