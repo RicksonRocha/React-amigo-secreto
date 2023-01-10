@@ -45,7 +45,7 @@ describe('Quando não existem participantes suficientes', () => {
 describe('Quando existem participantes suficientes', () => {
     
     beforeEach(() => {
-        (useListaDeParticipantes as jest.Mock).mockReturnValue(['Rickson', 'Juliane', 'Lula da Silva'])
+        (useListaDeParticipantes as jest.Mock).mockReturnValue(['Rhaenyra', 'Jacaerys', 'Rhaenys'])
     })
 
     test('a brincadeira pode ser iniciada', () => {

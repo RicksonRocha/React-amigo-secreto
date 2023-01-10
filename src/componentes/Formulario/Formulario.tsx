@@ -6,13 +6,11 @@ import './Formulario.css'
 
 const Formulario = () => {
 
-    const [nome, setNome] = useState('')
-
+    const adicionarNaLista = useAdicionarParticipante()
+    const mensagemDeErro = useMensagemDeErro()
     const inputRef = useRef<HTMLInputElement>(null)
 
-    const adicionarNaLista = useAdicionarParticipante()
-
-    const mensagemDeErro = useMensagemDeErro()
+    const [nome, setNome] = useState('')
 
     const adicionarParticipante = (evento: React.FormEvent<HTMLFormElement>) => {
         evento.preventDefault()
