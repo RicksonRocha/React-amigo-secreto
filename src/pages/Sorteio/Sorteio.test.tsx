@@ -17,6 +17,13 @@ jest.mock('../../state/hook/useResultadoSorteio', () => {
     }
 })
 
+const mockNavigation = jest.fn()
+jest.mock('react-router-dom', () => {
+    return {
+        useNavigate: () => mockNavigation
+    }
+})
+
 describe('Na página de sorteio', () => {
 
     const participantes = ['Daenerys Targaryen', 'Daemon', 'Jaime Lennister']
@@ -89,5 +96,17 @@ describe('Na página de sorteio', () => {
         });
  
         expect(amigoSecreto).not.toBeInTheDocument()
+    })
+
+    test('ao clicar em voltar, a página inicial é exibida', () => {
+        render(
+            <RecoilRoot>
+                <Sorteio/>
+            </RecoilRoot>
+        )
+        const button = screen.getByRole('navigation')
+        fireEvent.click(button)
+        expect(mockNavigation).toHaveBeenCalledTimes(1)
+        expect(mockNavigation).toHaveBeenCalledWith('/')
     })
 })

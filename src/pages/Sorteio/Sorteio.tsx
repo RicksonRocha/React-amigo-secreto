@@ -1,5 +1,6 @@
 // src/paginas/Sorteio.tsx
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import Card from "../../componentes/Card/Card"
 import { useListaDeParticipantes } from "../../state/hook/useListaDeParticipantes"
 import { useResultadoSorteio } from "../../state/hook/useResultadoSorteio"
@@ -9,6 +10,7 @@ import './Sorteio.css'
 const Sorteio = () => {
     const participantes = useListaDeParticipantes()
     const resultado = useResultadoSorteio()
+    const navigateTo = useNavigate()
 
     const [participanteDaVez, setParticipanteDaVez] = useState('')
     const [amigoSecreto, setAmigoSecreto] = useState('')
@@ -43,6 +45,7 @@ const Sorteio = () => {
                 {amigoSecreto && <p className="resultado" role="alert">{amigoSecreto}</p>}
                 <footer className="sorteio">
                     <img src="/imagens/aviao.png" className="aviao" alt="Um desenho de um avião de papel" />
+                    <button role="navigation" onClick={ev => navigateTo('/')}>Voltar</button>
                 </footer>
             </section>
         </Card>
